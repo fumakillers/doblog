@@ -1,0 +1,16 @@
+[app]
+HttpdPort = :9009
+[site]
+BlogURL = https://example.com
+RootPath = /
+BackendURI = backend/
+PagePerView = 5
+SessionName = _session
+LoggedinKey = IS_LOGGEDIN
+LoggedinValue = LOGGEDIN
+[db]
+DBUser = USER
+DBPassword = PASSWORD
+DBName = DB_NAME
+DBHost = 127.0.0.1
+DBPort = 27017

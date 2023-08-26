@@ -1,0 +1,1 @@
+{{ define "tags" }}<div class="tag"><h2>Tags</h2>{{ range $i, $v := .tags }}{{ if eq $i 0 }}<a href="{{ $v.TagURI }}">{{ $v.TagName }}</a> ({{ $v.Count }}){{ else }}, &nbsp;<a href="{{ $v.TagURI }}">{{ $v.TagName }}</a> ({{ $v.Count }}){{ end }}{{ end }}</div>{{ end }}

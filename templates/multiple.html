@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+{{ template "head" .}}
+<body>
+{{ template "header" .}}
+{{ range .entries }}<article class="entry">
+<h2><a href="{{ .URI }}">{{ .Title }}</a></h2>
+<div class="entry-meta">
+<time datetime="{{ .PublishDate }}">{{ dtFormat .PublishDate }}</time>
+<span class="right">{{ range $i, $v := .Tags }}{{ if eq $i 0 }}<a href="{{ $v.TagURI }}">{{ $v.TagName }}</a>{{ else }}, <a href="{{ $v.TagURI }}">{{ $v.TagName }}</a>{{ end }}{{ end }}</span>
+</div>
+{{ toMarkdown .Content true .URI .Title }}
+</article>{{ end }}
+<div class="paginate">{{ if .previous.IsExists }}<a href="{{ .previous.URI }}" class="left">&lt;&lt; previous</a>{{ end }}&nbsp;
+{{ if .next.IsExists }}<a href="{{ .next.URI }}" class="right">next &gt;&gt;</a>{{ end }}</div>
+{{ template "tags" .}}
+{{ template "footer" .}}
+{{ template "prism_js" .}}
+</body>
+</html>

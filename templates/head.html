@@ -1,0 +1,8 @@
+{{define "head"}}<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ブログ">
+<title>dobusarai/blog{{ if ne .title "" }} - {{.title}}{{ end}}</title>
+{{ template "css" .}}
+<link rel='stylesheet' id='prism-css-0-css'  href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css?ver=1.15.0' type='text/css' media="print" onload="this.media='all'" />
+</head>{{end}}
